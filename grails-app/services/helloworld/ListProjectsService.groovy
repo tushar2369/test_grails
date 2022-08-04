@@ -8,6 +8,8 @@ class ListProjectsService {
 
     def save(GrailsParameterMap params){
         ListProjects project=new ListProjects(params);
+        project.version=2
+        project.dueDate=new Date()
         def response=AppUtils.saveResponse(false,project)
         try {
             if(project.validate()){
