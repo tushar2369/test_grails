@@ -23,4 +23,9 @@ class ListProjectsController {
         def allProjects=ListProjects.list()
         [allprojects:allProjects]
     }
+
+    def edit(Integer id){
+        ListProjects project= listProjectsService.getById(id)
+        [project:project]
+    }
 }

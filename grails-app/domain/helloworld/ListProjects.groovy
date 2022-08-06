@@ -1,8 +1,15 @@
 package helloworld
 
+import grails.gorm.annotation.Entity
+
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
+
+
 class ListProjects {
 
-    String id
+
+    Long id
     String name;
     String description;
     Date dueDate;
@@ -10,5 +17,6 @@ class ListProjects {
     static hasMany = [task:Task]*/
     static constraints = {
         id column: "id", type: "long", sqlType: "int", generator: 'identity'
+        version false
     }
 }

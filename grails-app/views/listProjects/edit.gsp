@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: 46933
   Date: 04-08-2022
-  Time: 10:06
+  Time: 15:39
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -14,24 +14,22 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
 <body>
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Due date</th>
-        <th>Description</th>
-        <th>Action</th>
-    </tr>
-    <g:each in="${allprojects}" status="i" var="thisProject">
-    <tr>
-        <td>${thisProject.name}</td>
-        <td>${thisProject.dueDate}</td>
-        <td>${thisProject.description}</td>
-        <td><g:link controller="listProjects" action="edit" id="${thisProject.id}">edit </g:link></td>
-    </tr>
-    </g:each>
-</table>
+<div class="card" style="margin: 50px">
+    <div class="card-header">
+        <g:message code="project" args="[Update]"></g:message>
+    </div>
+<div class="col-lg-12 d-flex justify-content-center">
+    <div class="col-md-8" style="margin-top: 50px">
+    <form  controls="listProjects" action="update" style="align-content: center">
+        <g:hiddenField name="id" value="${project.id}"></g:hiddenField>
+        <g:render template="form"></g:render>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    </div>
+
+</div>
+</div>
+
 </body>
 </html>
