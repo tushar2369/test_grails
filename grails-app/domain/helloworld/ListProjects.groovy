@@ -17,6 +17,6 @@ class ListProjects {
     static hasMany = [task:Task]*/
     static constraints = {
         id column: "id", type: "long", sqlType: "int", generator: 'identity'
-        version false
+
     }
 }

@@ -17,15 +17,15 @@
 <body>
 <div class="card" style="margin: 50px">
     <div class="card-header">
-        <g:message code="project" args="[Update]"></g:message>
+        <g:message code="Edit" args="[update]"></g:message>
     </div>
 <div class="col-lg-12 d-flex justify-content-center">
     <div class="col-md-8" style="margin-top: 50px">
-    <form  controls="listProjects" action="update" style="align-content: center">
+    <g:form  controls="listProjects" action="update" style="align-content: center">
         <g:hiddenField name="id" value="${project.id}"></g:hiddenField>
         <g:render template="form"></g:render>
         <button type="submit" class="btn btn-primary">Update</button>
-    </form>
+    </g:form>
     </div>
 
 </div>

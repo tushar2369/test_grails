@@ -1,5 +1,7 @@
 package helloworld
 
+import grails.web.servlet.mvc.GrailsParameterMap
+
 class ListProjectsController {
     ListProjectsService listProjectsService;
 
@@ -25,7 +27,51 @@ class ListProjectsController {
     }
 
     def edit(Integer id){
-        ListProjects project= listProjectsService.getById(id)
-        [project:project]
+        if(flash.redirectParams){
+            [project: flash.redirectParams]
+        }else{
+            def response=listProjectsService.getById(id)
+            if(!response){
+                redirect(controller: "ListProjects",action: "index")
+            }else{
+                [project:response]
+            }
+        }
+     /*   ListProjects project= listProjectsService.getById(id)
+        [project:project]*/
+    }
+
+    def update(){
+        print("update call")
+        def response=listProjectsService.getById(params.id)
+        if(!response){
+            redirect(controller: "ListProjects",action: "index")
+        }else{
+             response=listProjectsService.update(response,params)
+
+            print("Update Response : "+response.isSuccess.toString())
+            if(!response.isSuccess){
+                flash.redirectParams=response.model
+                redirect(controller: "ListProjects",action: "edit")
+            }else {
+                redirect(controller: "ListProjects",action: "index")
+            }
+
+        }
+    }
+
+    def delete(Integer id){
+        def response=listProjectsService.getById(id)
+        if(!response){
+            redirect(controller: "ListProjects",action: "index")
+        }else{
+            response=listProjectsService.delete(response)
+            if(!response){
+                [message:"Something Wrong"]
+                redirect(controller: "ListProjects",action: "index")
+            }else{
+                redirect(controller: "ListProjects",action: "index")
+            }
+        }
     }
 }

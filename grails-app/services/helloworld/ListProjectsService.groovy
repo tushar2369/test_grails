@@ -31,15 +31,24 @@ class ListProjectsService {
         return response;
     }
 
-    def edit(ListProjects projects,GrailsParameterMap params){
+    def update(ListProjects projects,GrailsParameterMap params){
         projects.properties=params
-        def response=AppUtils.saveResponse(isSucces:false,model:projects)
+        def response=AppUtils.saveResponse(false,projects)
         if(projects.validate()){
-            projects.save(flush:true)
+            projects.save(flush:false)
             if(!projects.hasErrors()){
-                response.isSuccess=false
+                response.isSuccess=true
             }
         }
         return response
+    }
+
+    def delete(ListProjects project){
+        try{
+           project.delete()
+        }catch(Exception e1){
+            return false
+        }
+        return true
     }
 }
