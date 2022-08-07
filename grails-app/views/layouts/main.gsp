@@ -16,10 +16,10 @@
 <header>
     <nav class="navbar navbar-light bg-dark justify-content-between">
         <a class="navbar-brand" style="color: white">Navbar</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <g:form class="form-inline" controller="listProjects" action="index">
+            <g:textField name="name" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </g:form>
     </nav>
 
     <div class="container-fluid">

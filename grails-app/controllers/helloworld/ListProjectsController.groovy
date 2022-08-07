@@ -6,8 +6,10 @@ class ListProjectsController {
     ListProjectsService listProjectsService;
 
     def index() {
+        println("Filter call.... ")
+        def response=listProjectsService.list(params)
         def allProjects=ListProjects.list()
-        [allprojects:allProjects]
+        [allprojects:response.list]
     }
 
     def save={

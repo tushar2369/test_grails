@@ -6,6 +6,18 @@ import grails.web.servlet.mvc.GrailsParameterMap
 @Transactional
 class ListProjectsService {
 
+    def list(GrailsParameterMap params){
+        List<ListProjects> projectsList=ListProjects.createCriteria().list(params){
+
+            println(params.toString())
+            if(params?.name){
+                like("name", "%" +"${params.name}" + "%")
+            }
+
+        }
+        return [list:projectsList,count:projectsList.size()]
+    }
+
     def save(GrailsParameterMap params){
         ListProjects project=new ListProjects(params)
         project.version=params.int("version")

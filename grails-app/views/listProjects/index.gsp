@@ -34,14 +34,15 @@
                 <th scope="col">Name</th>
                 <th scope="col">Due date</th>
                 <th scope="col">Description</th>
-                <th scope="col">Action</th>
+                <th scope="col" style="width:5%">Action</th>
             </tr>
             <g:each in="${allprojects}" status="i" var="thisProject">
                 <tr>
                     <td>${thisProject.name}</td>
                     <td>${thisProject.dueDate}</td>
                     <td>${thisProject.description}</td>
-                    <td class="d-flex justify-content-center ">
+                    <td class=" d-flex justify-content-center ">
+                        <g:link controller="listProjects" action="show" id="${thisProject.id}"><i class="fas fa-eye" style="padding-left: 4px;padding-right: 4px"></i></g:link>
                         <g:link controller="listProjects" action="edit" id="${thisProject.id}"><i class="fas fa-edit " style="padding-left: 4px;padding-right: 4px"></i></g:link>
                         <g:link controller="listProjects" action="delete" id="${thisProject.id}"><i class="fas fa-trash " style="color: red; padding-left: 4px;padding-right: 4px"></i></g:link>
                     </td>
