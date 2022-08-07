@@ -15,12 +15,27 @@
 <body>
 <header>
     <nav class="navbar navbar-light bg-dark justify-content-between">
-        <a class="navbar-brand" style="color: darkblue">Navbar</a>
+        <a class="navbar-brand" style="color: white">Navbar</a>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">DashBoard</a></li>
+                    <li class="list-group-item"><a href="#">Contact</a></li>
+                    <li class="list-group-item"><a href="#">About</a></li>
+                </ul>
+            </nav>
+            <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+                <g:layoutBody/>
+            </main>
+        </div>
+    </div>
 </header>
 
 

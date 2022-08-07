@@ -10,8 +10,6 @@
 *= require bootstrap
 *= require bootstrap-grid
 *= require bootstrap-reboot
-*= require grails
-*= require main
-*= require mobile
+*= require style
 *= require_self
 */
