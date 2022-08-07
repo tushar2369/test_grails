@@ -61,6 +61,7 @@ class ListProjectsController {
     }
 
     def delete(Integer id){
+        System.out.print("Delete Call")
         def response=listProjectsService.getById(id)
         if(!response){
             redirect(controller: "ListProjects",action: "index")

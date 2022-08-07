@@ -20,25 +20,33 @@
 
 
 <body>
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Due date</th>
-        <th>Description</th>
-        <th>Action</th>
-    </tr>
-    <g:each in="${allprojects}" status="i" var="thisProject">
-    <tr>
-        <td>${thisProject.name}</td>
-        <td>${thisProject.dueDate}</td>
-        <td>${thisProject.description}</td>
-        <td>
-            <g:link controller="listProjects" action="edit" id="${thisProject.id}"><i class="fas fa-edit"></i></g:link>
-            <g:link controller="listProjects" action="delete" id="${thisProject.id}"><i class="fas fa-trash" style="color: red"></i></g:link>
-        </td>
+<div class="card" style="margin: 50px" >
+    <div class="card-header">
+        <h4>Project List</h4>
+    </div>
+    <div class="col-lg-12 d-flex justify-content-center" style="padding: 20px">
+        <table border="1" class="table table-bordered">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Due date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+            </tr>
+            <g:each in="${allprojects}" status="i" var="thisProject">
+                <tr>
+                    <td>${thisProject.name}</td>
+                    <td>${thisProject.dueDate}</td>
+                    <td>${thisProject.description}</td>
+                    <td>
+                        <g:link controller="listProjects" action="edit" id="${thisProject.id}"><i class="fas fa-edit"></i></g:link>
+                        <g:link controller="listProjects" action="delete" id="${thisProject.id}"><i class="fas fa-trash" style="color: red"></i></g:link>
+                    </td>
 
-    </tr>
-    </g:each>
-</table>
+                </tr>
+            </g:each>
+        </table>
+    </div>
+</div>
+
 </body>
 </html>
