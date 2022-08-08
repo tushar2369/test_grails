@@ -17,6 +17,11 @@
 
 
 <body>
+<g:if test="${flash.message}">
+    <div class="alert alert-success" role="alert">
+        ${flash.message}
+    </div>
+</g:if>
 <div class="card" style="margin: 5px" >
     <div class="card-header container-fluid">
         <div class="row">

@@ -9,7 +9,7 @@ class ListProjectsService {
     def list(GrailsParameterMap params){
         List<ListProjects> projectsList=ListProjects.createCriteria().list(params){
 
-            println(params.toString())
+            //println(params.toString())
             if(params?.name){
                 like("name", "%" +"${params.name}" + "%")
             }

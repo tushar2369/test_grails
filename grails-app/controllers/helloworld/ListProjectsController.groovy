@@ -54,8 +54,10 @@ class ListProjectsController {
             print("Update Response : "+response.isSuccess.toString())
             if(!response.isSuccess){
                 flash.redirectParams=response.model
+
                 redirect(controller: "ListProjects",action: "edit")
             }else {
+                flash.message="Update Success"
                 redirect(controller: "ListProjects",action: "index")
             }
 
@@ -73,6 +75,7 @@ class ListProjectsController {
                 [message:"Something Wrong"]
                 redirect(controller: "ListProjects",action: "index")
             }else{
+                flash.message="Delete Success"
                 redirect(controller: "ListProjects",action: "index")
             }
         }
