@@ -2,7 +2,7 @@
     <label for="name" class="col-sm-3 col-form-label">Name</label>
 
     <div class="col-sm-8">
-        <g:textField name="name" class="form-control" value="${project?.name}" placeholder="Please Enter Project Name"/>
+        <g:textField name="name" required="true" class="form-control" value="${project?.name}" placeholder="Please Enter Project Name"/>
     </div>
 </div>
 

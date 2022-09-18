@@ -29,6 +29,8 @@ class ListProjectsService {
                 if(!project.hasErrors()){
                     response.isSuccess=true;
                 }
+            }else{
+                response.isSuccess=false;
             }
         } catch(Exception e1) {
             //Catch block

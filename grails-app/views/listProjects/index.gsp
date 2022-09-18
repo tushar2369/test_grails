@@ -25,8 +25,17 @@
 <div class="card" style="margin: 5px" >
     <div class="card-header container-fluid">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <h3 >Project List</h3>
+            </div>
+            <div class="col-md-2 float-right">
+
+                <select name="allProjects" class="form-control" id="name" required onchange="this.form.submit();">
+                    <option value="">Select</option>
+                    <g:each in="${allprojects}" var="project">
+                        <option value="${project.id}">${project.name}</option>
+                    </g:each>
+                </select>
             </div>
             <div class="col-md-2 float-right">
                 <g:link class="btn btn-primary" controller="listProjects" action="create">Create</g:link>
@@ -57,6 +66,22 @@
         </table>
     </div>
 </div>
+
+<script type="application/javascript">
+    $(document).ready(function() {
+       /* var projectName = "${allprojects.name}";
+       var s= $("#projectName").val(projectName);
+
+        $('#projectName').submit(function(){
+            //here I want to run the method in my controller and update the value of myData
+            alert('change');
+        });*/
+
+    });
+
+
+
+</script>
 
 </body>
 </html>
