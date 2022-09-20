@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Jenkins 2</title>
+    <title>Welcome to Jenkins 3</title>
 
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 </head>
