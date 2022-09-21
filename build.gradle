@@ -10,7 +10,7 @@ buildscript {
     }
 }
 
-version "0.3"
+version "1.0.0"
 group "helloworld"
 
 apply plugin:"eclipse"
@@ -19,7 +19,7 @@ apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"asset-pipeline"
 apply plugin:"org.grails.grails-gsp"
-war.archiveName "test.war"
+//war.archiveName "test.war"
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
