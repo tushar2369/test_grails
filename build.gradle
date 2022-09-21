@@ -9,8 +9,8 @@ buildscript {
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.14.2"
     }
 }
-
-version "0.2"
+war.archiveName "test.war"
+version "0.3"
 group "helloworld"
 
 apply plugin:"eclipse"
